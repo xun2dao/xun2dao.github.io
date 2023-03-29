@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2023-03-23-GameEngine" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/23/2023-03-23-GameEngine/" class="article-date">
+  <time class="dt-published" datetime="2023-03-23T03:49:17.000Z" itemprop="datePublished">2023-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/23/2023-03-23-GameEngine/">GameEngine</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/23/2023-03-23-GameEngine/" data-id="clft99dcy00032olv095zhgcv" data-title="GameEngine" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023-02-25-CMake" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/25/2023-02-25-CMake/" class="article-date">
+  <time class="dt-published" datetime="2023-02-25T09:23:06.000Z" itemprop="datePublished">2023-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/25/2023-02-25-CMake/">CMake</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>CMake 是用于自动生成&#x2F;构建项目的工具。它被广泛使用于各种项目的构建中，可以跨平台，并拥有非常多实用的特性。</p>
+<h2 id="1-CMake的工作流程"><a href="#1-CMake的工作流程" class="headerlink" title="1. CMake的工作流程"></a>1. CMake的工作流程</h2><p>CMake有三个工作阶段: 配置(configuration), 生成(generate)，构建(build)</p>
+<p><img src="/cmake3%E9%98%B6%E6%AE%B5.png"></p>
+<h3 id="1-1-configuration"><a href="#1-1-configuration" class="headerlink" title="1.1 configuration"></a>1.1 configuration</h3><p>CMake的配置阶段做两件事情：</p>
+<ol>
+<li>根据当前的环境（操作系统，编译器，连接器，项目结构等）生成一个<strong>build tree</strong>到一个输出文件夹，build tree会记录各种信息</li>
+<li>解析<strong>CMakeLists.txt</strong>文件并执行，CMakeLists.txt文件描述了整个项目的结构，最终会在输出文件夹中生成各种临时文件和缓存(CMakeCache.txt)，用于下一个阶段</li>
+</ol>
+<p>总的来说，configuration阶段就是根据项目的结构和当前运行的环境，收集信息，存储收纳起来等待下个阶段进行使用。CMakeCache.txt存储了一些稳定的变量，比如编译器和连接器的路径等。这样下次进行配置的时候，就不用再找了，直接读取，可以节省时间。</p>
+<h2 id="1-2-generate"><a href="#1-2-generate" class="headerlink" title="1.2 generate"></a>1.2 generate</h2><p>CMake的生成阶段是利用配置阶段收集的信息，生成一个构建配置文件——<strong>build system</strong>。build system就是一个满足当前环境（系统，架构，编译器，连接器等）需要的配置文件。如果是GNU&#x2F;Make&#x2F;Ninja的话，build system 就是Makefile文件，如果是Microsoft Visual Studio的话，就是project 文件。</p>
+<p>除了生成build system之外，再generate阶段的最后，cmake还会计算生成器表达式，计算的结果会放到build system中，这是generate阶段对build system最后的干预了。</p>
+<h2 id="1-3-build"><a href="#1-3-build" class="headerlink" title="1.3 build"></a>1.3 build</h2><p>cmake第三个阶段就是build（构建）阶段，这个阶段的任务就是根据 build system构建出最终的目标：可执行文件。整个阶段的执行流程基本是: 编译器，连接器，测试，打包，报告错误等，按照这个顺序最终生成可执行二进制文件。</p>
+<blockquote>
+<p>需要记住的是，cmake本身并不是构建工具，cmake本事是不能构建出项目的，它是个规则制定者，指定了如何构建项目，在什么阶段用什么构建工具。也就是说，cmake必须和其他的工具链配合才能正常使用。</p>
+</blockquote>
+<h2 id="1-4-简单的cmake项目和cmake程序"><a href="#1-4-简单的cmake项目和cmake程序" class="headerlink" title="1.4 简单的cmake项目和cmake程序"></a>1.4 简单的cmake项目和cmake程序</h2><p>假设我们有一个简单的hello.cpp文件，我们如何写一个简单的cmake文件那?具体操作如下:</p>
+<p>第一步，先写一个CMakeLists.txt文件:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmake_required_minimum(VERSION <span class="number">3.20</span>) <span class="comment"># CMake的最低版本要求是3.20</span></span><br><span class="line"><span class="keyword">project</span>(HelloWorld) <span class="comment"># 项目名称HelloWorld</span></span><br><span class="line"><span class="keyword">add_executable</span>(HelloWorld Hello.cpp) <span class="comment"># 目标为HelloWorld, 添加Hello.cpp文件</span></span><br></pre></td></tr></table></figure>
+
+<p>第二部执行命令:</p>
+<p><code>cmake --B buildtree &amp; cmake --build buildtree</code> 生成buildtree文件夹存放buildtree信息和build system信息，然后执行build过程，构建项目，生成二进制可执行文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/25/2023-02-25-CMake/" data-id="clft99dcv00012olvallk6z9b" data-title="CMake" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023-02-23-被讨厌的勇气" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/23/2023-02-23-%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94/" class="article-date">
+  <time class="dt-published" datetime="2023-02-23T09:33:16.000Z" itemprop="datePublished">2023-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/23/2023-02-23-%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94/">被讨厌的勇气</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="自卑感"><a href="#自卑感" class="headerlink" title="自卑感"></a>自卑感</h2><p>自卑感</p>
+<p>自卑情结</p>
+<p>优越情结</p>
+<p>自卑尖锐化: 把不幸当作武器，从而显得特别，显得高人一等，尝试操控别人。（这不就是我吗？）</p>
+<h2 id="人生不是竞赛"><a href="#人生不是竞赛" class="headerlink" title="人生不是竞赛"></a>人生不是竞赛</h2><p>不要把人际关系看作是竞争的关系，你和别人之间是在同一个平面上向前走，彼此并不存在竞争。如果把人际关系看作是竞争的关系，那么会演化成别人&#x2F;世界是你的敌人，这样无论输或赢，内心永远无法平静。</p>
+<h2 id="权力斗争和复仇"><a href="#权力斗争和复仇" class="headerlink" title="权力斗争和复仇"></a>权力斗争和复仇</h2><h2 id="人生的目标和任务"><a href="#人生的目标和任务" class="headerlink" title="人生的目标和任务"></a>人生的目标和任务</h2><p>目标:</p>
+<ol>
+<li>行动层面<ul>
+<li>独立</li>
+<li>和社会和谐相处</li>
+</ul>
+</li>
+<li>心里层面<ul>
+<li>我是有能力的</li>
+<li>人人都是我的伙伴</li>
+</ul>
+</li>
+</ol>
+<p>人生的任务:</p>
+<ul>
+<li>工作的任务</li>
+<li>交友的任务</li>
+<li>爱的任务</li>
+</ul>
+<blockquote>
+<p>阿德勒的心里学是<strong>勇气的心理学</strong>也是<strong>使用的心理学</strong>。</p>
+</blockquote>
+<h2 id="课题分离和自由"><a href="#课题分离和自由" class="headerlink" title="课题分离和自由"></a>课题分离和自由</h2><p><strong>被讨厌的勇气！！！！！</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/23/2023-02-23-%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94/" data-id="clft99dcq00002olv6fvofuv7" data-title="被讨厌的勇气" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6-%E4%BA%BA%E7%94%9F%EF%BC%9B-%E6%84%8F%E4%B9%89/" rel="tag">哲学; 人生； 意义</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-vulkan" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/23/vulkan/" class="article-date">
+  <time class="dt-published" datetime="2023-02-23T09:13:53.000Z" itemprop="datePublished">2023-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/23/vulkan/">vulkan</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/23/vulkan/" data-id="clft99dcz00052olvaui211os" data-title="vulkan" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-元编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/23/%E5%85%83%E7%BC%96%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-02-23T08:21:58.000Z" itemprop="datePublished">2023-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/23/%E5%85%83%E7%BC%96%E7%A8%8B/">元编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="2-模板类"><a href="#2-模板类" class="headerlink" title="2. 模板类"></a>2. 模板类</h2><p>模板类是c++模板变成中的第二个模块，模板类的申明和模板函数一样，但是模板类有许多方面都和模板函数不一样，然后不管有多么不一样，我们都要记住模板类最值得注意的是模板成员函数的定义。</p>
+<p>一个基本的模板类的声明如下:</p>
+<p><strong>代码块:1</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(T <span class="type">const</span>&amp; value)</span></span>;<span class="comment">// 1</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">T <span class="type">const</span>&amp; <span class="title">top</span><span class="params">()</span> <span class="type">const</span></span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">()</span></span>; <span class="comment">//2</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">Stack</span>(); <span class="comment">// 3</span></span><br><span class="line">    ~<span class="built_in">Stack</span>(); <span class="comment">//3</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::vector&lt;T&gt; m_data; <span class="comment">// T类型的vector成员</span></span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">bool</span> Stack&lt;T&gt;::<span class="built_in">Empty</span>()&#123;</span><br><span class="line"> <span class="keyword">return</span> m_data.<span class="built_in">empty</span>();   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>模板类内部声明定义的成员函数除了要将模板参数参数化以外，和普通类成员函数并无不同，如注释1所示，但是在外部定义的成员函数就必须要使用完整的模板类名了，如注释2中，使用Stack<T>,且必须再次用template声明。在模板类内部需要类名而不是类类型的地方，如注释3中的构造和析构函数，则可以不使用完整类名。</p>
+<h3 id="2-1-成员函数的实例化"><a href="#2-1-成员函数的实例化" class="headerlink" title="2.1 成员函数的实例化"></a>2.1 成员函数的实例化</h3><blockquote>
+<p>模板类的成员函数也是遵循调用时实例化的，这和普通的模板函数一样。如果未被调用，那么类中的成员函数就不会被实例化</p>
+</blockquote>
+<p><strong>代码块:2</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Stack&lt;<span class="type">int</span>&gt; instance;</span><br><span class="line">    <span class="keyword">while</span>(!instance.<span class="built_in">Empty</span>())&#123;</span><br><span class="line">        <span class="type">int</span> value = instance.<span class="built_in">top</span>();</span><br><span class="line">        instance.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码块2中使用了代码块1的内容，根据<strong>调用时实例化</strong>的规则，Stack类的成员函数中，只有empty,top,pop三个函数会被实例化，Push函数就不会被实例化，也就是根本不会存在。</p>
+<h3 id="2-2-特化和偏特化"><a href="#2-2-特化和偏特化" class="headerlink" title="2.2 特化和偏特化"></a>2.2 特化和偏特化</h3><p>类模板有特化的概念,所谓特化，就是指定一部分模板参数，从而让模板在处理某些特定的类型时可以执行<strong>定制的行为</strong>。</p>
+<p>仍然使用stack的例子，比如下面:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::vector&lt;T&gt; elems;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    ....</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码是<strong>主模板</strong>，如果我们想对std::string这个类型进行定制化操作，就可以使用特化模板。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt; <span class="comment">// 特化模板的声明</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;std::string&gt;&#123; <span class="comment">// 指定特化的模板参数</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::deque&lt;std::string&gt; elems; <span class="comment">// 对于std::string类型，我们使用deque来容纳元素。</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(std::string <span class="type">const</span>&amp; elem)</span></span>; <span class="comment">// 所有涉及到模板参数的函数，都要替换为std::string.</span></span><br><span class="line">    <span class="function">std::stirng <span class="type">const</span>&amp; <span class="title">top</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在外面怎么声明??</span></span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="type">void</span> Stack&lt;std::string&gt;::<span class="built_in">Push</span>(std::string <span class="type">const</span>&amp; elem)&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我们还可以针对<strong>指针类型，</strong>专门设置一个特化模板:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;T*&gt;&#123; <span class="comment">// 专门针对指针类型</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::vector&lt;T*&gt; elems;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(T* elem)</span></span>;</span><br><span class="line">    <span class="function">T* <span class="title">top</span><span class="params">()</span> <span class="type">const</span></span>&#123;</span><br><span class="line">        <span class="built_in">assert</span>(!elems.<span class="built_in">emtpy</span>());</span><br><span class="line">        <span class="keyword">return</span> elems.<span class="built_in">back</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>偏特化</strong><br>对于有多个模板参数的模板中的一部分参数进行指定，就是偏特化。<strong>需要注意的是，偏特化是针对类而言的，函数没有偏特化，但是好像有方法可以做到借用类的偏特化实现函数的偏特化。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主模板</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Map</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::map&lt;T1, T2&gt; elems;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 对于T1, T2 类型一样</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Map</span>&lt;T,T&gt;&#123; <span class="comment">// 和全特化时一样，需要在类名后面指明偏特化。</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 对于关键字指针类型</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Map</span>&lt;T1*, T2&gt;&#123;</span><br><span class="line">    <span class="keyword">using</span> KPointer = T1*;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::map&lt;KPointer, T2&gt; elems;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> Map&lt;<span class="type">int</span>, <span class="type">float</span>&gt;  a; <span class="comment">// 调用主模板</span></span><br><span class="line"><span class="number">2.</span> Map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; b; <span class="comment">// 调用特化模板1</span></span><br><span class="line"><span class="number">3.</span> Map&lt;<span class="type">int</span>*, <span class="type">float</span>&gt; c; <span class="comment">// 调用特化模板2</span></span><br><span class="line"><span class="number">4.</span> Map&lt;<span class="type">int</span>*, <span class="type">int</span>*&gt; d; <span class="comment">// 出现歧义， 1和2都可以匹配</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>第四个调用出现歧义了，因为特化模板1和2都可以匹配该调用，这里可以看出来，特化模板之间存在匹配。如果我们想解决这个问题，可以专门写一个针对两个模板参数都是指针类型的特化模板，比如:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Map</span>&lt;T*, T*&gt;&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-参数类型推导和字符串常量和类型推断引导"><a href="#2-3-参数类型推导和字符串常量和类型推断引导" class="headerlink" title="2.3 参数类型推导和字符串常量和类型推断引导"></a>2.3 参数类型推导和字符串常量和类型推断引导</h3><p>自从<strong>c++17</strong>开始，模板类支持通过构造函数的参数推导模板参数的操作，和模板函数的类型推导一样，比如我们有一个接受单个元素进行构造的Stack类，具体例子如下:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::vector&lt;T&gt; elems; <span class="comment">// 因为容器不能存放const对象，所以这个用例实际上会报错</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Stack</span>(T&amp; elem) : elems&#123;std::<span class="built_in">move</span>(elem)&#125;&#123;&#125; <span class="comment">// 1.使用引用传递，按照原类型推导</span></span><br><span class="line">    <span class="built_in">Stack</span>(T elem) : elems&#123;std::<span class="built_in">move</span>(elem)&#125;&#123;&#125; <span class="comment">// 2.使用按值传递，推导类型会退化</span></span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="function">Stack <span class="title">s</span><span class="params">(<span class="number">30</span>)</span></span>; <span class="comment">// 根据2.会自动推导出Stack的类型为int，等价于Stack&lt;int&gt; s(30);根据1.会推导出失败</span></span><br></pre></td></tr></table></figure>
+
+<p>Stack会根据当前传入的参数进行类型推导。这很方便，但是要小心<strong>字符串常量</strong>，如果我们传入的参数是字符串常量的话。就可能遇到麻烦了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="function">Stack <span class="title">s</span><span class="params">(<span class="string">&quot;hello&quot;</span>)</span></span>;  <span class="comment">// 根据1.这里Stack的模板参数会被推导为char const[6]；根据2.会推导出const char*</span></span><br></pre></td></tr></table></figure>
+
+<p>很明显，如果是通过字符串推导的模板类的模板参数类型的话，得到的类型是<code>char const[6]</code>,那么之后传入的参数必须都是长度为五的字符串了，这显然不是我们想要的。c++中可以提供一个推断引导，告诉编译器我们遇到字符串类型时，需要推导为<code>std::string</code>,当然，这里我们需要使用按值传递才行：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    std::vector&lt;T&gt; elems;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">   <span class="comment">// Stack(T&amp; elem) : elems&#123;std::move(elem)&#125;&#123;&#125; // 1.使用引用传递，按照原类型推导</span></span><br><span class="line">    <span class="built_in">Stack</span>(T elem) : elems&#123;std::<span class="built_in">move</span>(elem)&#125;&#123;&#125; <span class="comment">// 2.使用按值传递，推导类型会退化</span></span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">Stack</span>(<span class="type">const</span> <span class="type">char</span>*) -&gt; Stack&lt;std::string&gt;; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="function">Stack <span class="title">s</span><span class="params">(<span class="string">&quot;hello&quot;</span>)</span></span>; <span class="comment">// 此时s会被推导成为Stack&lt;std::string&gt;类型</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="2-3-别名模板"><a href="#2-3-别名模板" class="headerlink" title="2.3 别名模板"></a>2.3 别名模板</h3><p><strong>类型推断引导</strong></p>
+<h2 id="3-变参模板"><a href="#3-变参模板" class="headerlink" title="3. 变参模板"></a>3. 变参模板</h2><h3 id="3-1-模板参数包"><a href="#3-1-模板参数包" class="headerlink" title="3.1 模板参数包"></a>3.1 模板参数包</h3><p>我们可以通过模板参数包传递任意数量任意类型的参数，同时也可以通过函数传参，将任意数量任意类型的参数传递给函数，这两种情况传递的可变参数称为参数包。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ... Args&gt; <span class="comment">// 模板参数包</span></span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="type">bool</span> <span class="title">IsSame</span><span class="params">(T , Args ...)</span></span>&#123; <span class="comment">// 函数参数包</span></span><br><span class="line">    <span class="keyword">return</span> (std::is_samve_v&lt;T,Args&gt; &amp;&amp; ...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述函数可以判断传递给IsSame的多个类型是否相等，上述模板参数中的<code>...Args</code>表示模板参数包，<code>Args...</code>表示函数参数包。</p>
+<p>感性的说，参数包就是包含各种参数的数组，在编译阶段，我们可以通过<strong>参数包展开的方式逐步访问参数包里面的参数</strong>。</p>
+<h3 id="3-2-折叠表达式-gt-变参表达式？？"><a href="#3-2-折叠表达式-gt-变参表达式？？" class="headerlink" title="3.2 折叠表达式 -&gt; 变参表达式？？"></a>3.2 折叠表达式 -&gt; 变参表达式？？</h3><p>折叠表达式可以将参数包按照某种计算展开，其形式如下:</p>
+<ol>
+<li>(pack op …) </li>
+<li>(… op pack)</li>
+<li>(init op … op pack)</li>
+<li>(pack op … op init)</li>
+</ol>
+<p>op这个操作符可以指代很多操作，基本的逻辑运算，算术运算，逗号表达式等都可以被指带。</p>
+<p>比如，我们可以写一个将所有参数输入<code>std::vector</code>的函数:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push2Vec</span><span class="params">(std::vector&lt;T&gt;&amp; vec, T... args)</span></span>&#123;</span><br><span class="line">    <span class="comment">//static_assert(IsSame(args...)); // 判断所有的参数类型必须相等</span></span><br><span class="line">    (vec.<span class="built_in">push_back</span>(args) , ...); <span class="comment">// 将所有的元素推入vector中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们还可以将所以的参数打印出来，但是得考虑终结条件，有两种办法解决：一种是使用非模板函数作为终结，二是使用编译阶段判断参数何时结束。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">PrintArgs</span>()&#123;</span><br><span class="line">    std::cout&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第一种方案</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ... Args&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintArgs</span><span class="params">(T first, Args...others)</span></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; fist &lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="built_in">PrintArgs</span>(others...);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种方案</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> ... Args&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintArgs</span><span class="params">(Args ... others)</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">if</span> <span class="title">constexpr</span><span class="params">(<span class="keyword">sizeof</span>...(others) == <span class="number">0</span>)</span> <span class="keyword">return</span></span>; <span class="comment">// 编译时期判断</span></span><br><span class="line">    (std::cout&lt;&lt; ... &lt;&lt; others);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-3-变参模板函数的递归和终结"><a href="#3-3-变参模板函数的递归和终结" class="headerlink" title="3.3 变参模板函数的递归和终结"></a>3.3 变参模板函数的递归和终结</h3><p>变参模板如果要终结，就要专门设置一个非模板函数作为终结例子。</p>
+<p>具体操作在上面已经演示过了。</p>
+<h3 id="3-4-变参模板的例子"><a href="#3-4-变参模板的例子" class="headerlink" title="3.4 变参模板的例子"></a>3.4 变参模板的例子</h3><p>可变参数的使用非常广泛，在标准库中，典型的例子有: <code>make_shared</code>, <code>thread</code>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> std&#123;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;T, <span class="keyword">typename</span> ... Types&gt;</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;T&gt; <span class="title">make_shared</span><span class="params">(Types... args)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> F, <span class="keyword">typename</span> ... Args&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">thread</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">thread</span>(F, Args... args);</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-变参的推断指引"><a href="#3-5-变参的推断指引" class="headerlink" title="3.5 变参的推断指引"></a>3.5 变参的推断指引</h3><p>一个经典的例子是<code>std::array</code>，对传进去的参数类型和参数个数做了限制，非常牛。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ... Args&gt;</span></span><br><span class="line"><span class="function"><span class="title">std::array</span><span class="params">(T, Args...)</span> -&gt; std::array&lt;std::<span class="type">is_enable_t</span>&lt;std::is_same_v&lt;T, Args&gt; &amp;&amp; ... , T&gt;, 1 + <span class="keyword">sizeof</span>...<span class="params">(Args)</span>&gt;</span>; <span class="comment">// 推断指引在这里要求传进array的所有元素类型必须相同，且第二个参数大小为1+sizeof...(Args)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-一些技巧"><a href="#4-一些技巧" class="headerlink" title="4. 一些技巧"></a>4. 一些技巧</h2><h3 id="4-1-typename"><a href="#4-1-typename" class="headerlink" title="4.1 typename"></a>4.1 typename</h3><h3 id="4-2-零初始化"><a href="#4-2-零初始化" class="headerlink" title="4.2 零初始化"></a>4.2 零初始化</h3><h3 id="4-3-裸数组和字符串常量"><a href="#4-3-裸数组和字符串常量" class="headerlink" title="4.3 裸数组和字符串常量"></a>4.3 裸数组和字符串常量</h3><blockquote>
+<p>一个非常重要的语言规则：通过函数参数按值传递的数组，都会被退化成指针。</p>
+</blockquote>
+<p>裸数组有五种类型：指针，知道边界的数组，知道边界的数组引用，不知道边界的数组，不知道边界的数组引用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 处理裸数组的类模板</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;T*&gt;&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="type">size_t</span> sz&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;T[sz]&gt;&#123;&#125;; <span class="comment">// 知道边界的数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="type">size_t</span> sz&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;<span class="built_in">T</span>(&amp;)[sz]&gt;&#123;&#125;; <span class="comment">// 知道边界的数组的引用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;T[]&gt; &#123;&#125;; <span class="comment">// 不知道边界的数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&lt;<span class="built_in">T</span>(&amp;)[]&gt; &#123;&#125;; <span class="comment">// 不知道边界的数组的引用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不知道边界的数组类型，通常是不完整的类型</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> a[]; <span class="comment">// 不完整的声明类型</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-4-成员模板"><a href="#4-4-成员模板" class="headerlink" title="4.4 成员模板"></a>4.4 成员模板</h3><p>拷贝构造函数，成员变量类型不同，也可以实现拷贝</p>
+<h2 id="5-万能引用和完美转发和enable-if"><a href="#5-万能引用和完美转发和enable-if" class="headerlink" title="5. 万能引用和完美转发和enable_if"></a>5. 万能引用和完美转发和enable_if</h2><p>我认为的enable_if 的实现原理。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="type">bool</span> cond, <span class="keyword">typename</span> Type = <span class="type">void</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> enable_if&#123;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type = <span class="type">void</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> enable_if&lt;<span class="literal">true</span>, Type&gt;&#123;</span><br><span class="line">  <span class="keyword">using</span> type = Type;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-1-万能引用和完美转发"><a href="#5-1-万能引用和完美转发" class="headerlink" title="5.1 万能引用和完美转发"></a>5.1 万能引用和完美转发</h3><ol>
+<li>可变对象的转发</li>
+<li>常量对象的转发</li>
+<li>可移动对象的转发</li>
+</ol>
+<p>为了实现三种转发，通常我们得实现三种接受参数的函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">(X&amp; x)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">(X <span class="type">const</span>&amp; x)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">(X&amp;&amp; x)</span></span>; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(X&amp; x)</span></span>&#123;</span><br><span class="line">    <span class="built_in">g</span>(x);</span><br><span class="line">&#125; <span class="comment">// 接受可变对象</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(X <span class="type">const</span>&amp; x)</span></span>&#123;</span><br><span class="line">    <span class="built_in">g</span>(x);</span><br><span class="line">&#125; <span class="comment">// 接受常量</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(X&amp;&amp; x)</span></span>&#123; <span class="comment">// 此时的x是可变的左值</span></span><br><span class="line">    <span class="built_in">g</span>(x); <span class="comment">// X&amp;</span></span><br><span class="line">    <span class="built_in">g</span>(std::<span class="built_in">move</span>(x)); <span class="comment">// X&amp;&amp;</span></span><br><span class="line">&#125; <span class="comment">// 接受可移动对象</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b;</span><br><span class="line">    <span class="built_in">foo</span>(a);  <span class="comment">// X&amp;</span></span><br><span class="line">    <span class="built_in">foo</span>(b); <span class="comment">// X const&amp; </span></span><br><span class="line">    <span class="built_in">foo</span>(std::<span class="built_in">move</span>(a)); <span class="comment">// X&amp;&amp;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在模板编程中，我们可以使用万能引用解决三种对象的传递问题，具体情况如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(T&amp;&amp; x)</span></span>&#123;</span><br><span class="line">    <span class="built_in">g</span>(std::forward&lt;T&gt;(x));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    X x;</span><br><span class="line">    <span class="type">const</span> X a;</span><br><span class="line">    <span class="built_in">foo</span>(x); <span class="comment">// foo(X&amp;)</span></span><br><span class="line">    <span class="built_in">foo</span>(a); <span class="comment">// foo(X const&amp;)</span></span><br><span class="line">    <span class="built_in">foo</span>(<span class="built_in">X</span>()); <span class="comment">// foo(X&amp;&amp;)</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意将模板中的T&amp;&amp;和普通函数中的T&amp;&amp;区分开来，模板中表示万能引用，而普通函数传参则表示只接受可移动对象。</p>
+<h3 id="5-2-enable-if"><a href="#5-2-enable-if" class="headerlink" title="5.2  enable_if"></a>5.2  enable_if</h3><p>通过使用<strong>enable_if</strong>我们可以在编译期选择模板。</p>
+<p>比如，如果我们想根据传入的参数判断是否在编译期生成某个函数，可以像下面一样实现。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = std::enable_if&lt;std::is_convertiable&lt;T, std::string&gt;&gt;&gt;</span><br><span class="line"><span class="built_in">void</span> (T&amp;&amp; arg)&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面这个模板只有接受到参数可以转换为std::string或者就是std::string的时候，才会被编译器生成，否则就是SFINAE，不会生成该函数实例。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/23/%E5%85%83%E7%BC%96%E7%A8%8B/" data-id="clft99dcz00042olvg6vhhoiy" data-title="元编程" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-%E5%85%83%E7%BC%96%E7%A8%8B/" rel="tag">c++; 元编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-学以致用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/23/%E5%AD%A6%E4%BB%A5%E8%87%B4%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-02-23T08:21:58.000Z" itemprop="datePublished">2023-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/23/%E5%AD%A6%E4%BB%A5%E8%87%B4%E7%94%A8/">最高学以致用法读后感</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="学以致用"><a href="#学以致用" class="headerlink" title="学以致用"></a>学以致用</h1><p><strong>自身的成长曲线不是和输入成正比的，而是和输出成正比的</strong>，这是学以致用这本书的核心观点，我们大多数人都是看重输入和忽略输出，从而导致很多知识只是知道了，输入到大脑中了，但是经过在海马体中短暂的存储后，很快会消失，之后便陷入到反复的噩梦中，不断尝试重新学习已经尝试了多次的知识，这种学习方法是非常低的。</p>
+<h2 id="Four-rules-for-output"><a href="#Four-rules-for-output" class="headerlink" title="Four rules for output."></a>Four rules for output.</h2><p>书中作者给出了输出的四个规则：</p>
+<ol>
+<li>两周内将知识&#x2F;信息至少<strong>运用</strong>三次，知识&#x2F;信息就会变成长期存储。</li>
+<li>输入和输出实际上是一个阶梯式的循环，不断地输入输出，才能逐渐掌握。</li>
+<li>不能单纯地输入输出，每次输出后，要指定合理的评价指标作为输出的反馈，用于下一轮输入输出的指导。</li>
+<li><strong>输入和输出的占比应满足 3:7</strong>，大部分的人处于相反的情况。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|------|           |-------|</span><br><span class="line">| 输入  |---------&gt; | 输出  |-------|</span><br><span class="line">| 30%  |           | 70%   |       |</span><br><span class="line">|------|           |-------|       |  每周至少两次输出</span><br><span class="line">  //|\\                            |</span><br><span class="line">    |                              |</span><br><span class="line">    |------------反馈---------------|</span><br></pre></td></tr></table></figure>
+
+<p>基于输出的学习方法是符合人类的大脑结构的，单纯的输入只会存储在人的海马体中，时间一长便会遗忘，当我们进行输出的时候，整个RAS(reticular activating system)便会被激活。 会调动整个大脑的资源，引起大脑的注意力，将海马体的信息转入到<code>皮层</code>中，形成长期记忆。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/23/%E5%AD%A6%E4%BB%A5%E8%87%B4%E7%94%A8/" data-id="clft99dd1000b2olv3cekbzeh" data-title="最高学以致用法读后感" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%EF%BC%9B-%E8%AF%BB%E5%90%8E%E6%84%9F/" rel="tag">学习方法； 读后感</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-%E5%85%83%E7%BC%96%E7%A8%8B/" rel="tag">c++; 元编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%B2%E5%AD%A6-%E4%BA%BA%E7%94%9F%EF%BC%9B-%E6%84%8F%E4%B9%89/" rel="tag">哲学; 人生； 意义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%EF%BC%9B-%E8%AF%BB%E5%90%8E%E6%84%9F/" rel="tag">学习方法； 读后感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-%E5%85%83%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">c++; 元编程</a> <a href="/tags/cmake/" style="font-size: 10px;">cmake</a> <a href="/tags/%E5%93%B2%E5%AD%A6-%E4%BA%BA%E7%94%9F%EF%BC%9B-%E6%84%8F%E4%B9%89/" style="font-size: 10px;">哲学; 人生； 意义</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%EF%BC%9B-%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 10px;">学习方法； 读后感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/23/2023-03-23-GameEngine/">GameEngine</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/25/2023-02-25-CMake/">CMake</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/23/2023-02-23-%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94/">被讨厌的勇气</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/23/vulkan/">vulkan</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/23/%E5%85%83%E7%BC%96%E7%A8%8B/">元编程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
