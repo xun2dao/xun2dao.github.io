@@ -407,7 +407,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = std::enable_if&lt;std::is_convertiable&lt;T, std::string&gt;&gt;&gt;</span><br><span class="line"><span class="built_in">void</span> (T&amp;&amp; arg)&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上面这个模板只有接受到参数可以转换为std::string或者就是std::string的时候，才会被编译器生成，否则就是SFINAE，不会生成该函数实例。</p>
-
+<h2 id="6-编译期编程"><a href="#6-编译期编程" class="headerlink" title="6. 编译期编程"></a>6. 编译期编程</h2><h3 id="6-1-constexpr"><a href="#6-1-constexpr" class="headerlink" title="6.1 constexpr"></a>6.1 constexpr</h3><h3 id="6-2-if-constexpr"><a href="#6-2-if-constexpr" class="headerlink" title="6.2 if constexpr"></a>6.2 if constexpr</h3><h3 id="6-3-SFINAE-enable-if-偏特化-decltype"><a href="#6-3-SFINAE-enable-if-偏特化-decltype" class="headerlink" title="6.3 SFINAE + enable_if + 偏特化 + decltype"></a>6.3 SFINAE + enable_if + 偏特化 + decltype</h3>
       
     </div>
     <footer class="article-footer">
